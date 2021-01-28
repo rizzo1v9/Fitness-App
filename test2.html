@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+ul {
+       list-style-type: none;
+       margin: 10;
+       padding: 0;
+       background-color: blue;
+       color: white;
+
+}
+
+
+.menu {
+       width: 100%;
+       background-color: blue;
+       font-weight: normal;
+       color: white;
+      }
+.menu > div, li {
+       display: inline-block;
+       position: relative;
+       width: 50px;
+       padding: 20px 20px;
+       
+
+
+      }
+
+.menu > div, li {
+       display: inline-block;
+       position: relative;
+       width: 50px;
+       padding: 15px 15px;
+
+      }
+
+.menu ul {
+       display: none;
+       position: absolute;
+       background-color:  blue;
+       left: 0px;
+       top: 30px;
+       padding: 10;
+
+      }
+.menu > div:hover ul {
+       display: block;
+      }
+
+
+
+</style>
+</head>
+<body>
+
+
+<div class="menu">
+<div>
+
+File
+<ul>
+      <li><a href="">Open</a></li>
+      <li><a href="">Save</a></li>
+      <li><a href="">Print</a></li>
+      <li><a href="">Exit</a></li>
+</ul>
+</div>
+<div>
+
+Edit
+<ul>
+      <li><a href="">Copy</a></li>
+      <li><a href="">Cut</a></li>
+      <li><a href="">Paste</a></li>
+      <li><a href="">Format</a></li>
+</ul>
+</div>
+<div>
+
+Help
+<ul>
+      <li><a href="">About</a></li>
+</ul>
+</div>
+</body>
+</html>
