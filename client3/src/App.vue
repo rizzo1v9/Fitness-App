@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import MyNav from "./components/Nav";
+import MyNav from "./components/MyNav";
 export default {
   components: {
     MyNav
