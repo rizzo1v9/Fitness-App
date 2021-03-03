@@ -6,7 +6,7 @@
         <h1 class="title">Who Should I Listen To?</h1>
         <h2 class="subtitle">
           There is a few people on the internet that can explain this better than I ever will be able to. These people are Greg Doucette, an IFBB Pro,
-          and Remmington James, a very popular Youtuber who has a great physique himself. Both of them have openly talked about how hard dieting
+          and Remington James, a very popular Youtuber who has a great physique himself. Both of them have openly talked about how hard dieting
           is, and how people trying to diet ruin it for themselves before they even start. There is a statistic that 95% of diets fail, so the
           approach these two incredible athletes came up with was to only focus on keeping protein high, and eating under your maintenance 
           calories. Before this, almost everyone would aim for a certain amount of carbs or fat, cycle high carb and low carb day, and a whole
@@ -17,13 +17,7 @@
           
         </h2>
 
-        <figure class="image is-128x128">
-            <img class="is-square" src="rem.jpg">
-          </figure>
-          
-          <figure class="image is-128x128">
-            <img class="is-square" src="greg.jpg">
-          </figure>
+    
         
       </section>
 
@@ -40,7 +34,7 @@
         <section class="section">
         <h1 class="title">Introduction Video</h1>
         <h2 class="subtitle">
-        Below, is a video from Remmington James that does a great job explaining how to start off, what mindset you should approach with
+        Below, is a video from Remington James that does a great job explaining how to start off, what mindset you should approach with
         and how to set yourself up to be successful.
         </h2>
       </section>
