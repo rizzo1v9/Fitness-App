@@ -1,9 +1,9 @@
 <template>
         <nav class="navbar container is-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            <i class="fab fa-instagram fa-3x  fa-fw fa-pulse"></i>
-            Ista-Gratitude
+          <a class="navbar-item">
+
+           Rizzo Fitness
           </a>
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -17,41 +17,24 @@
           <div class="navbar-start">
 
           <router-link to="/" class="navbar-item" >Home</router-link>
-          <router-link to="/Documentation"  class="navbar-item">Documentation</router-link>
+          <router-link to="/Diet" class="navbar-item">Diet</router-link>
+          <router-link to="/Training" class="navbar-item">Training</router-link>
+          <router-link to="/Overview" class="navbar-item">Overview</router-link>
+          <router-link to="/Friends" class="navbar-item">Friends</router-link>
+          <router-link to="/AdminPage" class="navbar-item">Super top secret admin page</router-link>
             
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                More
-              </a>
-      
-              <div class="navbar-dropdown">
-                <router-link to="/about" class="navbar-item">
-                  About
-                </router-link>
-
-                <a class="navbar-item" href="jobs.html">
-                  Jobs
-                </a>
-                <a class="navbar-item">
-                  Contact
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Report an issue
-                </a>
-              </div>
-            </div>
+           
           </div>
       
           <div class="navbar-end">
-          <router-link to="/Shop"  class="navbar-item">Shop</router-link>
+        
             <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a class="button is-light">
-                  Log in
+                <a class="button is-info">
+                  <router-link to="/SignUp"  class="navbar-item">Sign Up</router-link>
+                
+                 <router-link to="/LogIn"  class="navbar-item">Log in</router-link>
+                  
                 </a>
               </div>
             </div>
