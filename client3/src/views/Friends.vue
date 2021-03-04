@@ -74,7 +74,7 @@
       <p>
         <strong>Tanner Johnson</strong> <small>tannerthedude123@gmail.com</small> <small>31m</small>
         <br>
-        Just bought PEDs from the guy in the locker room at the gym! #juicin
+        Just bought PDs from the guy in the locker room at the gym! #juicin
       </p>
     </div>
     <nav class="level is-mobile">
