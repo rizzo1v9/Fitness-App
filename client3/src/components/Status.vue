@@ -6,18 +6,21 @@
   <figure class="media-left">
     <p class="image is-64x64">
       <img 
-      :pic="status.pic"
+      :src="status.user.pic"
       :alt="status.alt"
       >
     </p>
   </figure>
   <div class="media-content">
     <div class="content">
-      {{status.text}}
+      
       <p>
-        <strong>{{statuses.user.name}}</strong> <small>{{statuses.user.email}}</small> <small>31m</small>
+        <strong>{{status.user.name}}</strong> <small>{{status.user.email}}</small> <small>31m</small>
         <br>
-        <time datetime="statuses.time">{{statuses.time}}</time>
+        {{status.text}}
+        <br>
+        
+        <small><time :datetime="status.time">{{status.time}}</time></small>
         
       </p>
     </div>

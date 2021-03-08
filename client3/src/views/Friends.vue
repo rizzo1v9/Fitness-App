@@ -1,121 +1,131 @@
 <template>
   <div>
-      <div class="columns">
-      <div class=box>
-          <label class="label">Add Friends By Email:</label>
+    <div class="columns">
+      <div class="box">
+        <label class="label">Add Friends By Email:</label>
         <div class="control">
-          <input class="input" type="text" placeholder="e.g carlorizzo33@gmail.com">
+          <input
+            class="input"
+            type="text"
+            placeholder="e.g carlorizzo33@gmail.com"
+          />
           <button class="button">Add</button>
-          <label class="label">Post Status:</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="e.g Just PR'd deadlifts!">
-          <button class="button">Post</button>
         </div>
-        </div>
-
-        
-
+        <label class="label">Post Status:</label>
       </div>
+      <pre>
+          {{ newStatus }}
+        </pre
+      >
+    </div>
     <div class="column">
-      
-      <div class=box>
-          <label class="label">My Friends:</label>
-          <article class="media">
-  <figure class="media-left">
-    <p class="image is-64x64">
-      <img src="https://bulma.io/images/placeholders/128x128.png">
-    </p>
-  </figure>
-  <div class="media-content">
-    <div class="content">
-      <p>
-        <strong>Carlo Rizzo</strong> <small>carlorizzo33@gmail.com</small> <small>31m</small>
-        
-      </p>
-    </div>
-    <nav class="level is-mobile">
-      <div class="level-left">
-        
+      <div class="box" v-for="(friend, i) in friends" :key="i">
+        <AddFriends />
       </div>
-    </nav>
-  </div>
-  
-</article>
 
- <article class="media">
-  <figure class="media-left">
-    <p class="image is-64x64">
-      <img src="https://bulma.io/images/placeholders/128x128.png">
-    </p>
-  </figure>
-  <div class="media-content">
-    <div class="content">
-      <p>
-        <strong>Barrack Obama</strong> <small>realobama@gmail.com</small> <small>31m</small>
-        
-      </p>
+    <AddFriends />
     </div>
-    <nav class="level is-mobile">
-      <div class="level-left">
-        
+    <div class="content-item">
+      <div class="coulmn">
+        <div class="box">
+          <form @submit.prevent="addStatus">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Text input"
+                  v-model="newStatus.user.name"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Username</label>
+              <div class="control has-icons-left has-icons-right">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Email"
+                  v-model="newStatus.user.email"
+                />
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Status</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="text"
+                  v-model="newStatus.text"
+                />
+              </div>
+            </div>
+
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-link">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-    </nav>
     </div>
- 
-
-  
-    </article>
+    <div class="content-item" v-for="(status, i) in statuses" :key="i">
+      <Status :status="status" />
+    </div>
   </div>
-        <div class="content-item" v-for="(status, i) in statuses" :key ="i">
-        <Status :status="status" />
-        
-</div>
-   
-    </div>
-    
-    </div>
-<Footer>
-    </Footer>
-  
-  
-
-      
-      
-      
-  </div>
-
-  
 </template>
 
 <script>
-import Footer from "../components/Footer.vue";
 import Status from "../components/Status.vue";
+import AddFriends from "../components/AddFriends";
 export default {
-  data: ()=>  ({
-        statuses: [
-          {
-            
-            alt: "Placeholder image",
-            text: "Just bought PDs from the guy in the locker room at the gym! #juicin",
-            time: Date(), 
-            user: {
-                name: "Tanner Johnson",
-                email: "tannerthedude123@gmail.com",
-                pic: "https://bulma.io/images/placeholders/128x128.png"
-                
-            }
-          }
-        ]
-  }),
-  components: {
-        Footer,
-        Status
-    
-    }
+  data: () => ({
+    friends: [
+      {
+        src: "https://bulma.io/images/placeholders/128x128.png",
+        name: "Carlo Rizzo",
+        email: "carlorizzo33@gmail.com",
+      },
+    ],
 
-}
+    newStatus: {
+      user: {pic: "https://bulma.io/images/placeholders/128x128.png"},
+    },
+    statuses: [
+      {
+        alt: "Placeholder image",
+        text:
+          "Just bought PDs from the guy in the locker room at the gym! #juicin",
+        time: Date(),
+        user: {
+          name: "Tanner Johnson",
+          email: "tannerthedude123@gmail.com",
+          
+        },
+      },
+    ],
+  }),
+
+  components: {
+    Status,
+    AddFriends,
+  },
+  methods: {
+    addStatus() {
+      this.statuses.unshift(this.newStatus);
+      this.newStatus = { user: {pic: "https://bulma.io/images/placeholders/128x128.png"} };
+    },
+  },
+};
 </script>
 
 <style>
-  
 </style>
