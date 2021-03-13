@@ -2,28 +2,35 @@
   <div>
     <div class="columns">
       <div class="box">
+        <form @submit.prevent="addFriend">
         <label class="label">Add Friends By Email:</label>
         <div class="control">
           <input
             class="input"
             type="text"
             placeholder="e.g carlorizzo33@gmail.com"
+            v-model="newFriend.email"
           />
           <button class="button">Add</button>
         </div>
+        </form>
         <label class="label">Post Status:</label>
       </div>
       <pre>
-          {{ newStatus }}
+          {{ newFriend }}
         </pre
       >
     </div>
     <div class="column">
-      <div class="box" v-for="(friend, i) in friends" :key="i">
-        <AddFriends />
+      <div class="box">
+        <div class="content-item" v-for="(friend, i) in friends" :key="i">
+        <IndividualFriend :friend="friend"/>
+      </div>
       </div>
 
-    <AddFriends />
+   
+
+    
     </div>
     <div class="content-item">
       <div class="coulmn">
@@ -90,11 +97,19 @@ export default {
   data: () => ({
     friends: [
       {
+        alt: "Placeholder image",
+        
         src: "https://bulma.io/images/placeholders/128x128.png",
         name: "Carlo Rizzo",
         email: "carlorizzo33@gmail.com",
+        
+        
       },
     ],
+
+    newFriend:{
+        user:{}
+    },
 
     newStatus: {
       user: {pic: "https://bulma.io/images/placeholders/128x128.png"},
@@ -116,12 +131,16 @@ export default {
 
   components: {
     Status,
-    AddFriends,
+    IndividualFriend: AddFriends
   },
   methods: {
     addStatus() {
       this.statuses.unshift(this.newStatus);
       this.newStatus = { user: {pic: "https://bulma.io/images/placeholders/128x128.png"} };
+    },
+    addFriend() {
+      this.friends.unshift(this.newFriend);
+      this.newFriend = { user: {} };
     },
   },
 };

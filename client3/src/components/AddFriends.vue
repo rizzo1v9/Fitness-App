@@ -1,34 +1,33 @@
 <template>
 <div>
-<label class="label">My Friends:</label>
-          <article class="media">
+<article class="media">
   <figure class="media-left">
     <p class="image is-64x64">
-      <img :src="friend.src">
+      <img :src="friend.src"
+            :alt="friend.alt">
     </p>
   </figure>
   <div class="media-content">
     <div class="content">
       <p>
-        <strong>{{friend.name}}</strong> <small>{{friend.email}}</small> <small>31m</small>
-        
+        <strong>{{friend.name}}</strong> <small>{{friend.email}}</small>
+        <br>
       </p>
     </div>
     <nav class="level is-mobile">
-      <div class="level-left">
-        
-      </div>
+     
     </nav>
-    </div>
-    </article>
-    </div>
+  </div>
+  
+</article>
+</div>
 </template>
 
 <script>
 export default {
-        props: {
-            friend: Object
-        }
+    props: {
+      friend: Object
+    }
 }
 </script>
 
