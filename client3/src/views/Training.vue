@@ -1,6 +1,7 @@
 <template>
   <div>
             <section class="section">
+              <div class="content-item">
         <h1 class="title">Who Should I Listen To?</h1>
         <h2 class="subtitle">
         <p>As stated in the diet page, there is a lot of great information out there and a lot of fake nonsense that is made to get
@@ -9,6 +10,7 @@
         <a href=https://www.bodybuilding.com/>https://www.bodybuilding.com/</a>. One thing I love about this site is that it has been around
       since essentially the start of commercial internet, and they site actual studies that are conducted regarding supplements and training. </p>
         </h2>
+        </div>
         </section>
 
         

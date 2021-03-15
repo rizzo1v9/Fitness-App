@@ -11,18 +11,18 @@
             placeholder="e.g carlorizzo33@gmail.com"
             v-model="newFriend.email"
           />
-          <button class="button">Add</button>
+          <div class="content-item">
+          <button class="button is-link">Submit</button>
+          </div>
         </div>
         </form>
-        <label class="label">Post Status:</label>
+        
       </div>
-      <pre>
-          {{ newFriend }}
-        </pre
-      >
+      
     </div>
     <div class="column">
       <div class="box">
+        <label> My Friends: </label>
         <div class="content-item" v-for="(friend, i) in friends" :key="i">
         <IndividualFriend :friend="friend"/>
       </div>

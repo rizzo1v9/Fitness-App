@@ -8,6 +8,7 @@ import Training from '@/views/Training'
 import Overview from '@/views/Overview'
 import Friends from '@/views/Friends'
 import AdminPage from '@/views/AdminPage'
+import Session from '@/models/Session'
 
 
 Vue.use(VueRouter)
@@ -69,4 +70,13 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next)=> {
+  console.log({from, to })
+  if(to.path == '/Friends' && !Session.user){
+    next('/login')
+  }
+  else{
+    next();
+  }
+})
 export default router

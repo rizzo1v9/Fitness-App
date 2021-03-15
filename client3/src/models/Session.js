@@ -1,7 +1,13 @@
-/* B"H
-    Holds the user session. Is a singleton.
-*/
-export default {
+const Session = {
     user: null,
-    message: [] // To be used later
+    message: []
+}
+
+export default Session;
+
+export function Login(){
+    Session.user = { name: 'Carlo Rizzo', email: 'ctrizzo33@gmail.com'}
+}
+export function Logout() {
+    Session.user = null
 }

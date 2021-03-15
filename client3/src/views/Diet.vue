@@ -2,7 +2,7 @@
   <div>
   <div>
   <section class="section">
-        
+        <div class="content-item">
         <h1 class="title">Who Should I Listen To?</h1>
         <h2 class="subtitle">
           There is a few people on the internet that can explain this better than I ever will be able to. These people are Greg Doucette, an IFBB Pro,
@@ -17,11 +17,14 @@
           
         </h2>
 
-    
+      
+    </div>
         
       </section>
+      
 
       <section class="section">
+        <div class="content-item">
         <h1 class="title">How Should I Start?</h1>
         <h2 class="subtitle">
         <p><a href=https://tdeecalculator.net/>https://tdeecalculator.net/</a> is the first step to figuring out many calories you need
@@ -29,14 +32,18 @@
         phone and set it up with your data regarding your height and weight. Next, you will absolutely need a food scale so you know 
         exactly what you're putting into your body so you can track it and know how many calories you've consumed each day. </p>
         </h2>
+        </div>
+        
         
     </section>
         <section class="section">
+          <div class="content-item">
         <h1 class="title">Introduction Video</h1>
         <h2 class="subtitle">
         Below, is a video from Remington James that does a great job explaining how to start off, what mindset you should approach with
         and how to set yourself up to be successful.
         </h2>
+        </div>
       </section>
       <div style="padding:30px;">
       <iframe width="600" height="400"
@@ -59,5 +66,9 @@ export default {
 </script>
 
 <style>
-
+.content-item {
+    border: solid;
+    border-color:blue;
+    border-spacing: 15px;
+}
 </style>

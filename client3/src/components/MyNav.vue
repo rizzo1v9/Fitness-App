@@ -1,4 +1,5 @@
 <template>
+      
         <nav class="navbar container is-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
          
@@ -27,12 +28,10 @@
         
             <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-info">
-                  <router-link to="/SignUp"  class="navbar-item">Sign Up</router-link>
                 
-                 <router-link to="/LogIn"  class="navbar-item">Log in</router-link>
+                 <LogInBadge/>
                   
-                </a>
+                
               </div>
             </div>
           </div>
@@ -42,7 +41,11 @@
 </template>
 
 <script>
+import LogInBadge from "./LogInBadge"
 export default {
+  components:{
+    LogInBadge
+  }
 }
 </script>
 

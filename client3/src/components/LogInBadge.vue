@@ -2,16 +2,20 @@
     <div>
 
         <div class="buttons" v-if="!Session.user">
+            <router-link to="/Signup" class="button">
+
+            <strong>Sign up</strong>
+            </router-link>
             <a class="button is-primary">
-                <strong>Sign up</strong>
+                
             </a>
-            <a class="button is-light" @click="login">
+            <router-link to="/Login" class="button is-light" @click.prevent="login">
                 Log in
-            </a>
+            </router-link>
         </div>
         <div v-else>
-            Carlo Rizzo
-            (<a @click="logout">
+            <h1>Carlo Rizzo</h1>
+            (<a @click.prevent="logout">
                 Log out
             </a>)
         </div>
@@ -19,7 +23,7 @@
 </template>
 
 <script>
-import Session from "../models/Session";
+import Session, {Login, Logout} from "../models/Session";
 export default {
     data(){
         return {
@@ -28,10 +32,10 @@ export default {
     },
     methods: {
         login(){
-            this.Session.user = { name: "Carlo" }
+            Login();
         },
         logout(){
-            this.Session.user = null
+            Logout();
         }
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <div>
-
+  
   <h1 class="title">New Users Sign Up</h1>
   <div class="field">
     <label class="label">First Name</label>
@@ -25,11 +25,12 @@
   </div>
 
   <div class="field">
-    <label class="label">Passowrd</label>
+    <label class="label">Password</label>
     <div class="control">
       <input class="input" type="text" placeholder="e.g zzxxcc111">
     </div>
     </div>
+    <button class="button is-link" type="submit"> Sign Up </button>
     <Footer>
     </Footer>
     </div>

@@ -10,7 +10,7 @@
     <div class="box">
       Workout History
 
-      <div class="content-item" v-for="(log, i) in logs" :key="i">
+      <div class="history" v-for="(log, i) in logs" :key="i">
         <Log :log="log" />
       </div>
     </div>
@@ -29,12 +29,25 @@
         <form @submit.prevent="addLog">
         <input class="input" type="text" placeholder="Text input"
         v-model="newLog.log" />
+        <div class="history">
         <button class="button is-link">Submit</button>
+        </div>
         </form>
       </div>
       
     </div>
+    <div class="coulmns">
+      <div class="column is-one-third">
+        <div class="box">
+          
+          <label> My Progress: </label>
+          <div class="progress-bar">
+          </div>
+    <progress class="progress is-warning" value="0" max="100">75%</progress>
   </div>
+    </div>
+    </div>
+    </div>
 </template>
 
 <script>
@@ -65,4 +78,13 @@ export default {
 </script>
 
 <style>
+.history {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.progess-bar{
+   margin-top: 10px;
+    margin-bottom: 10px;
+}
 </style>

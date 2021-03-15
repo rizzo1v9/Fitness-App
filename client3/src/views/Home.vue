@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-
+    <div class="hero-css">
     <section class="hero is-primary">
         <div class="hero-body">
           <p class="title">
@@ -10,13 +10,16 @@
             By Carlo Rizzo
           </p>
         </div>
+        
         </section>
+        </div>
+        <div class="content-item">
   <div class="tile is-child box">
         <p class="title">Results start when you do</p>
         <p>When it comes to starting a diet and working out, we always tell ourselves we'll start tomorrow or we'll start on Monday.
           This mindset will not get you far when it comes to achieving the results you want. 
         </p>
-        
+        </div>
 
         
       </div> 
@@ -37,3 +40,13 @@ export default {
     }
 }
 </script>
+<style>
+.content-item {
+    border: solid;
+    border-color:blue;
+}
+.hero-css {
+  border: solid;
+  border-color:black;
+}
+</style>
