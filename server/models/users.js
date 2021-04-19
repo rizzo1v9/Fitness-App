@@ -36,8 +36,22 @@ module.exports.Add = (user)=> {
         throw "First Name is required"
     }
     list.push(user);
-    return user;
+    return {...user, password: undefined};
 }
+module.exports.Register = async (user)=> {
+    const hash = await bcrypt.hash(user.password, 8);
+
+    user.password = hash;
+
+    if(!user.firstName){
+        throw { code: 422, msg: "First Name is required" }
+    }
+
+    list.push(user);
+    return { ...user, password: undefined };
+
+}
+
 module.exports.Update = (user_id, user)=> {
     //Make patchable
     const oldObj = list[user_id];
