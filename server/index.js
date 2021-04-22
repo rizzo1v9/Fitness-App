@@ -3,6 +3,9 @@
 const path = require('path');
 const express = require('express');
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 const usersCtrl = require('./controllers/users');
 const statusCtrl = require('./controllers/statuses');
 

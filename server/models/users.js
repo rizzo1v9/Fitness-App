@@ -84,7 +84,7 @@ module.exports.Delete = (user_id)=> {
 module.exports.Login = async (email, password) =>{
     console.log({ email, password})
     const user = list.find(x=> x.email == email);
-    if(!user) throw { code: 401, msg: "Sorry there is no user with that handle" };
+    if(!user) throw { code: 401, msg: "Sorry there is no user with that email" };
 
     if( ! await bcrypt.compare(password, user.password) ){
         throw { code: 401, msg: "Wrong Password" };
