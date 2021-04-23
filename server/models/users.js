@@ -1,6 +1,8 @@
 const { use } = require("../controllers/users");
 const bcrypt = require('bcrypt');
 
+const salt_rounds = process.env.salt_rounds;
+const jwt_secret = process.env.jwt_secret;
 const list = [
     {
         firstName: 'Carlo',
@@ -43,7 +45,7 @@ module.exports.Add = (user)=> {
     return {...user, password: undefined};
 }
 module.exports.Register = async (user)=> {
-    const hash = await bcrypt.hash(user.password, 8);
+    const hash = await bcrypt.hash(user.password, +salt_rounds);
 
     user.password = hash;
 
@@ -89,5 +91,21 @@ module.exports.Login = async (email, password) =>{
     if( ! await bcrypt.compare(password, user.password) ){
         throw { code: 401, msg: "Wrong Password" };
     }
-    return user;
+
+    const data = { ...user, password: undefined};
+
+    const token = jwt.sign(data, jwt_secret)
+
+    return {user, token};
 } 
+
+module.exports.FromJWT = async (token) =>{
+    try {
+        const user = jwt.verify(token, JWT_SECRET);
+        return user;       
+    } catch (error) {
+        console.log({error});
+        return null;
+    }
+
+}
