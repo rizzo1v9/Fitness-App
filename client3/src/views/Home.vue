@@ -10,9 +10,17 @@
             By Carlo Rizzo
           </p>
         </div>
-        
         </section>
         </div>
+             <b-carousel>
+        <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
+            <section :class="`hero is-medium is-${carousel.color}`">
+                <div class="hero-body has-text-centered">
+                    <h1 class="title">{{carousel.text}}</h1>
+                </div>
+            </section>
+        </b-carousel-item>
+    </b-carousel>
         <div class="content-item">
   <div class="tile is-child box">
         <p class="title">Results start when you do</p>
@@ -31,13 +39,30 @@
 </template>
 
 <script>
+
+
+
+
 import Footer from "../components/Footer.vue";
 
 
 export default {
-  components: {
+  data(){
+    return {
+       carousels: [
+                { text: 'Get the best fitness information here!', color: 'primary' },
+                { text: 'Track your progress!', color: 'info' },
+                { text: 'Add friends!', color: 'success' },
+                
+                  ]
+            }
+  
+    
+        },
+        components: {
         Footer
     }
+
 }
 </script>
 <style>

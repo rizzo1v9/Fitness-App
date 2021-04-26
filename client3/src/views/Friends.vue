@@ -93,6 +93,17 @@
 <script>
 import Status from "../components/Status.vue";
 import AddFriends from "../components/AddFriends";
+import {api} from "../models/myFetch";
+
+
+
+
+(async ()=>{
+  const actualItem = await api("statuses");
+  console.log({actualItem});
+ 
+  }
+)()
 export default {
   data: () => ({
     friends: [
