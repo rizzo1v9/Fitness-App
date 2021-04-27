@@ -1,6 +1,6 @@
 <template>
       
-        <nav class="navbar container is-primary" role="navigation" aria-label="main navigation">
+        <nav class="navbar container is-danger" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
          
       

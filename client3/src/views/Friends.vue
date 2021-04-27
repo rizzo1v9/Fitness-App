@@ -94,8 +94,8 @@
 import Status from "../components/Status.vue";
 import AddFriends from "../components/AddFriends";
 import {api} from "../models/myFetch";
-
-
+import { GetMyStatuses, addStatus, DeleteStatus } from "../models/Statuses";
+import Session from "../models/Session";
 
 
 (async ()=>{
@@ -137,14 +137,19 @@ export default {
     IndividualFriend: AddFriends
   },
   methods: {
-    addStatus() {
-      this.statuses.unshift(this.newStatus);
-      this.newStatus = { user: {pic: "https://bulma.io/images/placeholders/128x128.png"} };
-    },
+   async addStatus(){
+            const status = await addStatus(this.newStatus)
+            this.statuses.unshift(status);
+            this.newStatus = { user: Session.user }
+        },
     addFriend() {
       this.friends.unshift(this.newFriend);
       this.newFriend = { user: {} };
     },
+     async deleteStatus(i){
+            await DeleteStatus(i);
+            this.statuses.splice(i, 1);
+        }
   },
 };
 </script>
