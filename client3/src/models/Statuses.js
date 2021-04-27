@@ -1,3 +1,4 @@
+
 import { api } from "../models/myFetch";
 
 export function GetMyStatuses(){
@@ -5,7 +6,7 @@ export function GetMyStatuses(){
 }
 
 export function GetStatusesForUser(email){
-    return api(`tatuses/${email}`)
+    return api(`statuses/${email}`)
 }
 
 export function GetMyFeed(){
@@ -16,8 +17,7 @@ export function AddStatus(status){
     return api("statuses", status );
 }
 
-export function DeletePost(post_id){
-    // This wont actually delete the correct item unless you are an administrator viewing all posts.
-    //  TODO: add real ids to posts so that we can address them properly
+export function DeletStatus(status_id){
+    
     return api("statuses/" + status_id, { }, "DELETE" );
 }

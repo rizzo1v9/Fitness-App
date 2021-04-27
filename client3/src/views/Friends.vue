@@ -125,20 +125,12 @@ export default {
     newStatus: {
       user: {pic: "https://bulma.io/images/placeholders/128x128.png"},
     },
-    statuses: [
-      {
-        alt: "Placeholder image",
-        text:
-          "Just bought PDs from the guy in the locker room at the gym! #juicin",
-        time: Date(),
-        user: {
-          name: "Tanner Johnson",
-          email: "tannerthedude123@gmail.com",
-          
-        },
-      },
-    ],
+   
   }),
+
+  async mounted(){
+    this.statuses = await GetMyStatuses();
+  },
 
   components: {
     Status,

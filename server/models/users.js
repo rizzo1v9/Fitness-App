@@ -1,5 +1,6 @@
 const { use } = require("../controllers/users");
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const salt_rounds = process.env.salt_rounds;
 const jwt_secret = process.env.jwt_secret;
@@ -9,9 +10,9 @@ const list = [
         lastName: 'Rizzo',
         email:'ctrizzo33@gmail.com',
         password: 'ctr333',
-        pic:'https://bulma.io/images/placeholders/128x128.png'
-
-    
+        pic:'https://bulma.io/images/placeholders/128x128.png',
+        isAdmin: true,
+        following: [ { email: 'ctrizzo33@gmail.com', isApproved: true }, ],
     },
 
     {
@@ -73,7 +74,6 @@ module.exports.Update = (user_id, user)=> {
     if(user.pic){
         oldObj.pic = user.pic;
     }
-    //list[user_id] = { ...list[user_id], ...user };
     return user;
 }
 module.exports.Delete = (user_id)=> {
@@ -96,12 +96,12 @@ module.exports.Login = async (email, password) =>{
 
     const token = jwt.sign(data, jwt_secret)
 
-    return {user, token};
+    return { user: data, token };
 } 
 
 module.exports.FromJWT = async (token) =>{
     try {
-        const user = jwt.verify(token, JWT_SECRET);
+        const user = jwt.verify(token, jwt_secret);
         return user;       
     } catch (error) {
         console.log({error});

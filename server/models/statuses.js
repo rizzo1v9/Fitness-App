@@ -1,3 +1,4 @@
+
 const { use } = require("../controllers/users");
 
 const users = require("./users");
@@ -9,15 +10,23 @@ const list = [
       time: Date(),
       user_name: "Tanner Johnson",
       user_email: "tannerthedude123@gmail.com",
+      isPublic: true
         
       
     },
   ];
 
-module.exports.GetAll = ()=> list.map((x,i)=>
-    
-    ({ ...x, user: users.GetByEmail(x.user_email)})
+  const listWithOwner = ()=> list.map((x, i) => ({ 
+     ...x, user: users.GetByEmail(x.user_email)})
 );
+module.exports.GetAll = ()=> {
+  return listWithOwner();
+}
+
+module.exports.GetFeed = (email)=> listWithOwner()
+  .filter(status=> users.GetByEmail(email).following.some(f=> f.email == post.user_email && f.isApproved) );
+
+
 module.exports.Get = (status_id)=> list[status_id];
 module.exports.Add = (status)=> {
     if(!status.user_email){
