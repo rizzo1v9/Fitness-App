@@ -1,12 +1,13 @@
 <template>
   <div>
+    <div class="content-item">
     <div class="box">
       Name: John Smith
       <p>Age: 24</p>
       <p>Weight: 172.4 LBS</p>
       <p>Height: 175 CM</p>
     </div>
-
+    </div>
     <div class="box">
       Workout History
 

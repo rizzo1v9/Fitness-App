@@ -1,55 +1,51 @@
 <template>
 <div>
- <nav class="level">
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Online Now</p>
-      <p class="title">45</p>
-    </div>
-  </div>
-  <div class="level-item has-text-centered">
-    <div>
-      <p class="heading">Monthly Users</p>
-      <p class="title">76</p>
-    </div>
-  </div>
-
-</nav>
-
-<form class="box">
-  <div class="field">
-    <label class="label">Search User By Email:</label>
-    <div class="control">
-      <input class="input" type="email" placeholder="e.g. alex@example.com">
-    </div>
-  </div>
 
 
-  <button class="button is-primary">Search</button>
-</form>
+
+
+
+ <div id="users">
+      <div class="columns is-centered">
+          <div class="column is-two-thirds">
 <div class ="box">
-<figure class="media-left">
-    <p class="image is-64x64">
-      <img src="https://bulma.io/images/placeholders/128x128.png">
-    </p>
-  </figure>
-  <div class="media-content">
-    <div class="content">
-      <p>
-        <strong>Tanner Johnson</strong> <small>tannerthedude123@gmail.com</small>
-        <br>
-        <p>Last Online: 30 Minutes ago</p>
-        <p>Member Since: 2/02/2021</p>
+<h1 class="title is-1">Users Page</h1>
+                <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                    <tr><th>First Name</th><th>Last Name</th><th>Handle</th></tr>
+
+                    <tr v-for="user in users" :key="user.handle">
+                        <td>{{user.firstName}}</td>
+                        <td>{{user.lastName}}</td>
+                        <td>{{user.handle}}</td>
+                    </tr>
+
+                </table>
     </div>
     </div>
     </div>
-</div>
+    </div>
+    </div>
+    
+
 </template>
 
 <script>
-export default {
 
-}
+import Vue from "vue";
+import { GetAllUsers } from "../models/Users";
+
+export default Vue.extend({
+    data: ()=> ({
+        users: []
+    }),
+    async mounted() {
+        this.users = await GetAllUsers();
+    },
+    components: {
+    },
+    methods: {
+    }
+})
 </script>
 
 <style>

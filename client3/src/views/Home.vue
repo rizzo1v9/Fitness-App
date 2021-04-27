@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="hero-css">
-    <section class="hero is-primary">
+    <section class="hero is-danger">
         <div class="hero-body">
           <p class="title">
             Rizzo Fitness
@@ -68,7 +68,7 @@ export default {
 <style>
 .content-item {
     border: solid;
-    border-color:blue;
+    border-color:black;
 }
 .hero-css {
   border: solid;

@@ -8,7 +8,7 @@
     <div class="field">
         <label class="label">Email</label>
         <div class="control">
-          <input class="input" type="text" placeholder="e.g carlorizzo33@gmail.com">
+          <input class="input" type="text" placeholder="Email" v-model="email">
         </div>
       </div>
   </h1>
@@ -16,7 +16,7 @@
   <div class="field">
     <label class="label">Password</label>
     <div class="control">
-      <input class="input" type="text" placeholder="e.g zzxxcc111">
+      <input class="input" type="password" placeholder="Password" v-model="password">
     </div>
     <div class="loginbutton">
     <button class="button is-link" type="submit"> Log In </button>
@@ -32,20 +32,19 @@
 
 <script>
 import Footer from "../components/Footer.vue";
-import Session, {Login} from "../models/Session";
+import {Login} from "../models/Session";
 
 export default{
-  data() {
-    return{
-      Session
-    }
-  },
+    data: ()=>({
+        handle: null,
+        password: null
+    }),
     components: {
         Footer
     },
 methods: {
       login(){
-            Login();
+            Login(this.handle, this.password);
         },
 
 }}

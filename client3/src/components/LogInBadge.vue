@@ -14,7 +14,7 @@
             </router-link>
         </div>
         <div v-else>
-            <h1>Carlo Rizzo</h1>
+            Hello {{Session.user.firstName}} {{Session.user.lastName}} {{Session.user.email}}
             (<a @click.prevent="logout">
                 Log out
             </a>)
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import Session, {Login, Logout} from "../models/Session";
+import Session, { Logout } from "../models/Session";
 export default {
     data(){
         return {
@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         login(){
-            Login();
+            this.$router.push('Login');
         },
         logout(){
             Logout();
