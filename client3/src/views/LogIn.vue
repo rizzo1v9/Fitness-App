@@ -8,7 +8,7 @@
     <div class="field">
         <label class="label">Email</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Email" v-model="email">
+          <input class="input" type="text" placeholder="Email" v-model="Email">
         </div>
       </div>
   </h1>
@@ -36,7 +36,7 @@ import {Login} from "../models/Session";
 
 export default{
     data: ()=>({
-        handle: null,
+        email: null,
         password: null
     }),
     components: {
@@ -44,7 +44,7 @@ export default{
     },
 methods: {
       login(){
-            Login(this.handle, this.password);
+            Login(this.email, this.password);
         },
 
 }}

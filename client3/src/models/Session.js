@@ -1,4 +1,5 @@
 import { api } from "./myFetch";
+import router from "../router";
 const Session = {
     user: null,
     message: []
@@ -12,6 +13,7 @@ export async function Login(email, password){
     Session.token = token;
 
     console.log(Session.user);
+    router.push(Session.nextRoute ?? '/friends')
 }
 export function Logout() {
     Session.user = null
