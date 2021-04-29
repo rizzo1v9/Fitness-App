@@ -24,7 +24,7 @@ module.exports.GetAll = ()=> {
 }
 
 module.exports.GetFeed = (email)=> listWithOwner()
-  .filter(status=> users.GetByEmail(email).following.some(f=> f.email == post.user_email && f.isApproved) );
+  .filter(status=> users.GetByEmail(email).following.some(f=> f.email == status.user_email && f.isApproved) );
 
 
 module.exports.Get = (status_id)=> list[status_id];

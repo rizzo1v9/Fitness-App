@@ -36,6 +36,10 @@ const app = express.Router();
             
         .delete('/:status_id', (req, res) => res.send( model.Delete(req.params.status_id)))
         
+        .get('/friends', (req, res)=>{
 
+            res.send( model.GetFeed(req.user.email) );
+
+    }  )
 
 module.exports = app;

@@ -15,7 +15,7 @@
     <div class="content">
       
       <p>
-        <strong>{{status.user.name}}</strong> <small>{{status.user.email}}</small> <small>31m</small>
+        <strong>`${status.user.name}</strong> <small>${status.user.email}`</small> <small>31m</small>
         <br>
         {{status.text}}
         <br>

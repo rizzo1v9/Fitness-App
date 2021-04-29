@@ -35,7 +35,7 @@
     <div class="content-item">
       <div class="coulmn">
         <div class="box">
-          <form @submit.prevent="addStatus">
+          <form @submit.prevent="AddStatus">
             <div class="field">
               <label class="label">Name</label>
               <div class="control">
@@ -94,7 +94,7 @@
 import Status from "../components/Status.vue";
 import AddFriends from "../components/AddFriends";
 import {api} from "../models/myFetch";
-import { GetMyStatuses, addStatus, DeleteStatus } from "../models/Statuses";
+import { GetMyStatuses, AddStatus, DeleteStatus } from "../models/Statuses";
 import Session from "../models/Session";
 
 
@@ -123,7 +123,7 @@ export default {
     },
 
     newStatus: {
-      user: {pic: "https://bulma.io/images/placeholders/128x128.png"},
+      user: Session.user
     },
    
   }),
@@ -137,8 +137,8 @@ export default {
     IndividualFriend: AddFriends
   },
   methods: {
-   async addStatus(){
-            const status = await addStatus(this.newStatus)
+   async AddStatus(){
+            const status = await AddStatus(this.newStatus)
             this.statuses.unshift(status);
             this.newStatus = { user: Session.user }
         },
@@ -150,6 +150,7 @@ export default {
             await DeleteStatus(i);
             this.statuses.splice(i, 1);
         }
+        
   },
 };
 </script>

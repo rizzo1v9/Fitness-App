@@ -2,6 +2,8 @@ import { api } from "./myFetch";
 import router from "../router";
 const Session = {
     user: null,
+    token: null,
+    nextRoute: null,
     message: []
 }
 
