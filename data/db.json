@@ -1,0 +1,11 @@
+{
+    "workouts":[
+        { "musclegroup": "Biceps"},
+        { "musclegroup": "Triceps"},
+        { "musclegroup": "Back"},
+        { "musclegroup": "Chest"},
+        { "musclegroup": "Legs"},
+        { "musclegroup": "Shoulders"},
+        { "musclegroup": "Abs"}
+    ]
+}
